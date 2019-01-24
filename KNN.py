@@ -2,17 +2,17 @@ import pandas as pd
 import sys
 
 # Load the training set and testing set
-sys.argv[1] = 'train.csv'
-df_train = pd.read_csv('train.csv')
+sys.argv[1] = 'TrainingData_A1.tsv'
+df_train = pd.read_csv('TrainingData_A1.tsv', sep='\t')
 input_data_train = df_train.astype(float).values.tolist()
 full_train_data = df_train.astype(float).values.tolist()
 for i in full_train_data:
     del i[-1]
 a = full_train_data         # Remove the "Class" Column from the training set.
 
-sys.argv[2] = 'test.csv'
+sys.argv[2] = 'TestData_A1.tsv'
 
-df_test = pd.read_csv('test.csv')
+df_test = pd.read_csv('TestData_A1.tsv', sep='\t')
 full_test_data = df_test.astype(float).values.tolist ()
 b = full_test_data
 
